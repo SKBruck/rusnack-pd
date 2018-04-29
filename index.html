@@ -21,6 +21,7 @@
     <div class="container">
 
       <form class="form">
+	<!-- Begin material size section of total form -->
 	<h1>Material Size</h1>
 	<div class="row">
 	  <div class="col-xs-3 form-inline form-group">
@@ -31,30 +32,41 @@
 	    <label for="y-measurement" class="control-label">Y</label>
 	    <input type="text" class="form-control" id="x-measurement">
 	  </div>
-	</div>
+	</div><!-- end material size section of form -->
+
+	<!-- Begin upload drawings and parts display section of form -->
 	<h1>Upload Drawings</h1>
-	<div class="panel panel-default">
+
+	<!-- Parts displays appear in panels -->
+	<div class="panel panel-default pd-panel">
 	  <div class="panel-body">
-	    <div class="row pd-display">
+	    <div class="row">
 	      <div class="col-sm-3 pd-img">
 		<img src="http://placekitten.com/300/200" class="img-responsive" alt="placeholder">
 	      </div>
 	      <div class="col-sm-8 pd-msg pd-err-msg">
 		<p>Lorem ipsum</p>
 	      </div>
-	      <div class="col-sm-1 pd-close text-right">
-		<button type="button" class="btn btn-danger">
+	      <div class="col-sm-1 text-right">
+		<!-- adding class="hidden" to removeBtn will toggle the button off -->
+		<button type="button" id="removeBtn" class="btn btn-danger">
 		  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
 		</button>
 	      </div>
 	    </div>
 	  </div>
-	</div><!-- end Upload Drawings panel -->
+	</div><!-- end part display panel -->
+
+	
 	<div class="form-group">
-	  <label for="uploadDrawing">Upload Drawing</label>
+	  <label for="uploadDrawing">Upload Drawings</label>
 	  <input type="file" id="uploadDrawing">
 	</div>
-	<button type="submit" class="btn btn-primary" disabled="disabled">Submit</button>
+
+	<!-- remove class="hidden" to display this helper text to users with part display errors -->
+	<p id="submitDisabledMsg" class="help-block hidden">Please correct any errors before submitting.</p>
+	<!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
+	<button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
       </form>
       
     </div><!-- end container -->
