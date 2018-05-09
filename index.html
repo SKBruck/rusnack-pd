@@ -4,10 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rusnak PD</title>
+    <meta name="description" content="Part Display">
+    <title>Part Display</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- SVG Elements -->
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,49 +23,248 @@
   </head>
   <body>
 
-    <div class="container">
+    <!-- top navbar -->
+    <nav class="navbar navbar-default">
+      <a class="navbar-brand" href="/">Part Display</a>
+    </nav>
 
-      <form class="form">
+    <div class="container-fluid">
+
+      <form class="form-horizontal">
 	<!-- Begin material size section of total form -->
-	<h1>Material Size</h1>
 	<div class="row">
-	  <div class="col-xs-3 form-inline form-group">
-	    <label for="x-measurement" class="control-label">X</label>
-	    <input type="text" class="form-control" id="x-measurement">
-	  </div>
-	  <div class="col-xs-3 form-inline form-group">
-	    <label for="y-measurement" class="control-label">Y</label>
-	    <input type="text" class="form-control" id="x-measurement">
-	  </div>
+	  <div class="col-xs-12 col-sm-6">
+	    <div class="tab tab-ms">Material Size</div>
+	    <div class="form-group">
+	      <label for="x-measurement" class="col-sm-1 control-label">X</label>
+	      <div class="col-sm-4">
+		<input type="text" class="form-control" id="x-measurement">
+	      </div>
+	    </div><!-- end X measurement -->
+	    <div class="form-group">
+	      <label for="y-measurement" class="col-sm-1 control-label">Y</label>
+	      <div class="col-sm-4">
+		<input type="text" class="form-control" id="y-measurement">
+	      </div>
+	    </div>
+	  </div><!-- end Y measurement -->
 	</div><!-- end material size section of form -->
 
 	<!-- Begin upload drawings and parts display section of form -->
-	<h1>Upload Drawings</h1>
+	<div class="row">
+	  <div class="col-xs-12">
+	    <div class="tab tab-ud">Upload Drawings</div>
 
-	<!-- Parts displays appear in panels -->
-	<div class="panel panel-default pd-panel">
-	  <div class="panel-body">
-	    <div class="row">
-	      <div class="col-sm-3 pd-img">
-		<img src="http://placekitten.com/300/200" class="img-responsive" alt="placeholder">
+	    <!-- Parts displays appear in panels -->
+
+	    <!-- start Single Part panel -->
+	    <div class="panel panel-default pd-panel">
+	      <div class="panel-body">
+		<div class="row">
+		  <div class="col-sm-2 pd-img">
+		    <!-- Single Part -->
+		    <svg width="100" height="100">
+		      <mask id="inner-profiles-4321">
+			<rect width="100%" height="100%" fill="white"/>
+			<circle cx="50" cy="50" r="10" fill="black" />
+		      </mask>
+
+		      <rect x="10" y="10" width="75" height="60" fill="#6699ff" mask="url(#inner-profiles-4321)" />
+		    </svg>
+		  </div>
+		  <div class="col-sm-9 pd-msg pd-err-msg">
+		    <!-- Input chunks: more can be added as needed -->
+		    <div class="form-group form-inline">
+		      <label for="sp-quantity" class="col-sm-1 control-label">Quantity</label>
+		      <input type="text" class="form-control" id="sp-quantity" placeholder="100,000">
+		    </div><!-- end single-part quantity input chunk -->
+		    <div class="form-group form-inline">
+		      <label for="sp-units" class="col-sm-1 control-label">Units</label>
+		      <input type="text" class="form-control" id="sp-units" placeholder="mm">
+		    </div><!-- end single-part units input chunk -->
+		  </div>
+		  <div class="col-sm-1 text-right">
+		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
+		    <button type="button" id="removeBtn" class="btn btn-danger">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		  </div>
+		</div>
 	      </div>
-	      <div class="col-sm-8 pd-msg pd-err-msg">
-		<p>Lorem ipsum</p>
+	    </div><!-- end Single Part panel -->
+
+	    <!-- start Total Parse Error panel -->
+	    <div class="panel panel-default pd-panel">
+	      <div class="panel-body">
+		<div class="row">
+		  <div class="col-sm-2 pd-img">
+		    <!-- Total Parse Error; no svg, using glyphicon picture symbol -->
+		    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+		  </div>
+		  <div class="col-sm-9 pd-msg pd-err-msg">
+		    <!-- Total Parse error message -->
+		    <p class="parse-error">File could not be used because it is a binary dxf. Please convert to an ASCII dxf format.</p>
+		  </div>
+		  <div class="col-sm-1 text-right">
+		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
+		    <button type="button" id="removeBtn" class="btn btn-danger">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		  </div>
+		</div>
 	      </div>
-	      <div class="col-sm-1 text-right">
-		<!-- adding class="hidden" to removeBtn will toggle the button off -->
-		<button type="button" id="removeBtn" class="btn btn-danger">
-		  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		</button>
+	    </div><!-- end Total Parse Error panel -->
+
+	    <!-- start Unsupported Entity Error panel -->
+	    <div class="panel panel-default pd-panel">
+	      <div class="panel-body">
+		<div class="row">
+		  <div class="col-sm-2 pd-img">
+		    <!-- Unsupported Entity Error svg -->
+		    <svg width="100" height="100">
+		      <mask id="inner-profiles-1234">
+			<rect width="100%" height="100%" fill="white" />
+			<circle cx="50" cy="50" r="20" fill="black" />
+		      </mask>
+
+		      <circle cx="50" cy="50" r="40" fill="#6699ff" mask="url(#inner-profiles-1234)" />
+		    </svg>
+		  </div>
+		  <div class="col-sm-9 pd-msg pd-err-msg">
+		    <!-- Unsupported Entity error message -->
+		    <p class="parse-error">Unsupported entity type "TEXT".</p>
+		  </div>
+		  <div class="col-sm-1 text-right">
+		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
+		    <button type="button" id="removeBtn" class="btn btn-danger">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		  </div>
+		</div>
 	      </div>
-	    </div>
+	    </div><!-- end Unsupported Entity Type panel -->
+
+	    <!-- start Disjointed Part Error panel -->
+	    <div class="panel panel-default pd-panel">
+	      <div class="panel-body">
+		<div class="row">
+		  <div class="col-sm-2 pd-img">
+		    <!-- Disjointed Part Error svg -->
+		    <svg width="100" height="100">
+		      <path d="M20 20 L80 20 L80 80 L20 80" stroke-width="3" stroke="black" fill="none"/>
+
+		      <circle data-error_id="0" cx="20" cy="20" r="5" fill="red" />
+		      <circle data-error_id="1" cx="20" cy="80" r="5" fill="red" />
+		    </svg>
+		  </div>
+		  <div class="col-sm-9 pd-msg pd-err-msg">
+		    <!-- Disjointed Part error message -->
+		    <p class="disjoint-error">Unconnected endpoint at (2, 2).</p>
+		    <p class="disjoint-error">Unconnected endpoint at (1, 0).</p>
+		  </div>
+		  <div class="col-sm-1 text-right">
+		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
+		    <button type="button" id="removeBtn" class="btn btn-danger">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		  </div>
+		</div>
+	      </div>
+	    </div><!-- end Disjointed Part error panel -->
+
+	    <!-- start Point Intersection Error panel -->
+	    <div class="panel panel-default pd-panel">
+	      <div class="panel-body">
+		<div class="row">
+		  <div class="col-sm-2 pd-img">
+		    <!-- Point Intersection Error svg -->
+		    <svg width="100" height="100">
+		      <circle cx="30" cy="30" r="20" stroke-width="3" stroke="black" fill="none" />
+		      <rect x="30" y="30" width="50" height="60" stroke-width="3" stroke="black" fill="none" />
+
+		      <circle data-error_id="0" cx="50" cy="30" r="5" fill="red" />
+		      <circle data-error_id="1" cx="30" cy="50" r="5" fill="red" />
+		    </svg>
+		  </div>
+		  <div class="col-sm-9 pd-msg pd-err-msg">
+		    <!-- Point Intersection error message -->
+		    <p class="point-intersection-error">Intersection along ((1, 0), (1, 1))</p>
+		  </div>
+		  <div class="col-sm-1 text-right">
+		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
+		    <button type="button" id="removeBtn" class="btn btn-danger">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		  </div>
+		</div>
+	      </div>
+	    </div><!-- end Point Intersection error panel -->
+
+	    <!-- start Line Intersection Error panel -->
+	    <div class="panel panel-default pd-panel">
+	      <div class="panel-body">
+		<div class="row">
+		  <div class="col-sm-2 pd-img">
+		    <!-- Line Intersection Error svg -->
+		    <svg width="100" height="100">
+		      <rect x="20" y="20" width="30" height="60" fill="#ff99ff" />
+		      <rect x="50" y="40" width="30" height="50" fill="#99ff99" />
+
+		      <path data-error_id="0" d="M50 40 L50 80" stroke-width="3" stroke="red" />
+		      <circle data-error_id="0" cx="50" cy="40" r="5" fill="red" />
+		      <circle data-error_id="0" cx="50" cy="80" r="5" fill="red" />
+		    </svg>
+		  </div>
+		  <div class="col-sm-9 pd-msg pd-err-msg">
+		    <!-- Line Intersection error message -->
+		    <p class="line-intersection-error">Intersection along ((1, 0), (1, 1))</p>
+		  </div>
+		  <div class="col-sm-1 text-right">
+		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
+		    <button type="button" id="removeBtn" class="btn btn-danger">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		  </div>
+		</div>
+	      </div>
+	    </div><!-- end Line Intersection error panel -->
+
+	    <!-- start Multipart Error panel -->
+	    <div class="panel panel-default pd-panel">
+	      <div class="panel-body">
+		<div class="row">
+		  <div class="col-sm-2 pd-img">
+		    <!-- Multipart Error svg -->
+		    <svg width="100" height="100">
+		      <rect data-error_id="0" x="20" y="20" width="30" height="30" fill="#ff99ff" />
+		      <circle data-error_id="1" cx="70" cy="60" r="20" fill="#6699ff" />
+		    </svg>
+		  </div>
+		  <div class="col-sm-9 pd-msg pd-err-msg">
+		    <!-- Multipart error message -->
+		    <p class="multipart-error">Only one part per drawing.</p>
+		    <p class="multipart-error">Part 1.</p>
+		    <p class="multipart-error">Part 2.</p>
+		  </div>
+		  <div class="col-sm-1 text-right">
+		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
+		    <button type="button" id="removeBtn" class="btn btn-danger">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		  </div>
+		</div>
+	      </div>
+	    </div><!-- end Multipart error panel -->
+	    
 	  </div>
 	</div><!-- end part display panel -->
 
 	<!-- begin upload drawings section of form -->
-	<div class="form-group">
-	  <label for="uploadDrawing">Upload Drawings</label>
-	  <input type="file" id="uploadDrawing">
+	<div class="col-xs-12">
+	  <div class="form-group">
+	    <label for="uploadDrawing">Upload Drawings</label>
+	    <input type="file" id="uploadDrawing">
+	  </div>
 	</div><!-- end upload drawings section of form -->
 	
 	<!-- Help-block text for users with part display errors. To show: remove class="hidden" -->
@@ -71,6 +275,16 @@
       </form><!-- end form -->
       
     </div><!-- end container -->
+
+    <footer class="footer">
+      <div class="container footer-container">
+	<div class="row">
+          <div class="col-xs-12 footer-col">
+            <p class="footer-text text-center">Copyright © 2018 - Part Display</p>
+          </div>
+	</div>
+      </div>
+    </footer>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
