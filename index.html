@@ -242,7 +242,7 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Multipart error message -->
-		    <p class="multipart-error">Only one part per drawing.</p>
+		    <p class="multipart-error">Only one part allowed per drawing.</p>
 		    <p class="multipart-error">Part 1.</p>
 		    <p class="multipart-error">Part 2.</p>
 		  </div>
@@ -255,6 +255,59 @@
 		</div>
 	      </div>
 	    </div><!-- end Multipart error panel -->
+
+	    <!-- start Multi-error example panel -->
+	    <div class="panel panel-default pd-panel">
+	      <div class="panel-body">
+		<div class="row">
+		  <div class="col-sm-2 pd-img">
+		    <!-- Multi-error example svg -->
+		    <svg width="100" height="100">
+		      <rect width="100%" height="100%" fill="white" />
+		      <circle cx="50" cy="50" r="20" fill="black" />
+		      <circle cx="50" cy="50" r="40" fill="#6699ff" mask="url(#inner-profiles-1234)" />
+		    </svg>
+		  </div>
+		  <div class="col-sm-9 pd-msg pd-err-msg">
+		    <!-- Multi-error example message -->
+		    <p class="multi-error">Unconnected endpoint at (20, 80).</p>
+		    <p class="multi-error">Unconnected endpoint at (20, 20).</p>
+		    <p class="multi-error">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
+		    <p class="multi-error">Unsupported entity type "Text".</p>
+		    <p class="multi-error">Only one part allowed per drawing.</p>
+		    <p class="multi-error">Only one part allowed per drawing.</p>
+		    <p class="multi-error">Intersection at point (30, 50).</p>
+		    <p class="multi-error">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
+		    <p class="multi-error">Part 2.</p>
+		    <p class="multi-error">Part 1.</p>
+		    <p class="multi-error">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
+		    <p class="multi-error">Unsupported entity type "Text".</p>
+		    <p class="multi-error">Intersection at point (50, 30).</p>
+		    <p class="multi-error">Unconnected endpoint at (20, 20).</p>
+		    <p class="multi-error">Unconnected endpoint at (20, 20).</p>
+		    <p class="multi-error">Only one part per drawing.</p>
+		    <p class="multi-error">Part 2.</p>
+		    <p class="multi-error">Part 2.</p>
+		    <p class="multi-error">Intersection at point (30, 50).</p>
+		    <p class="multi-error">Unconnected endpoint at (20, 80).</p>
+		    <p class="multi-error">Part 1.</p>
+		    <p class="multi-error">Intersection at point (50, 30).</p>
+		    <p class="multi-error">Only one part allowed per drawing.</p>
+		    <p class="multi-error">Intersection at point (50, 30).</p>
+		    <p class="multi-error">Unsupported entity type "Text".</p>
+		    <p class="multi-error">Part 1.</p>
+		    <p class="multi-error">Unconnected endpoint at (20, 80).</p>
+		    <p class="multi-error">Intersection at point (30, 50).</p>
+		  </div>
+		  <div class="col-sm-1 text-right">
+		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
+		    <button type="button" id="removeBtn" class="btn btn-danger">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		  </div>
+		</div>
+	      </div>
+	    </div><!-- end Multi-error example panel -->
 	    
 	  </div>
 	</div><!-- end part display panel -->
