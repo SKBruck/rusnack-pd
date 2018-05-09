@@ -103,7 +103,7 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Total Parse error message -->
-		    <p class="parse-error">File could not be used because it is a binary dxf. Please convert to an ASCII dxf format.</p>
+		    <p class="error-msg">File could not be used because it is a binary dxf. Please convert to an ASCII dxf format.</p>
 		  </div>
 		  <div class="col-sm-1 text-right">
 		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
@@ -132,7 +132,7 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Unsupported Entity error message -->
-		    <p class="parse-error">Unsupported entity type "TEXT".</p>
+		    <p class="error-msg">Unsupported entity type "TEXT".</p>
 		  </div>
 		  <div class="col-sm-1 text-right">
 		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
@@ -159,8 +159,8 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Disjointed Part error message -->
-		    <p class="disjoint-error">Unconnected endpoint at (2, 2).</p>
-		    <p class="disjoint-error">Unconnected endpoint at (1, 0).</p>
+		    <p class="error-msg">Unconnected endpoint at (2, 2).</p>
+		    <p class="error-msg">Unconnected endpoint at (1, 0).</p>
 		  </div>
 		  <div class="col-sm-1 text-right">
 		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
@@ -188,7 +188,7 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Point Intersection error message -->
-		    <p class="point-intersection-error">Intersection along ((1, 0), (1, 1))</p>
+		    <p class="error-msg">Intersection along ((1, 0), (1, 1))</p>
 		  </div>
 		  <div class="col-sm-1 text-right">
 		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
@@ -217,7 +217,7 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Line Intersection error message -->
-		    <p class="line-intersection-error">Intersection along ((1, 0), (1, 1))</p>
+		    <p class="error-msg">Intersection along ((1, 0), (1, 1))</p>
 		  </div>
 		  <div class="col-sm-1 text-right">
 		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
@@ -242,9 +242,9 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Multipart error message -->
-		    <p class="multipart-error">Only one part allowed per drawing.</p>
-		    <p class="multipart-error">Part 1.</p>
-		    <p class="multipart-error">Part 2.</p>
+		    <p>Only one part allowed per drawing.</p>
+		    <p class="error-msg">Part 1.</p>
+		    <p class="error-msg">Part 2.</p>
 		  </div>
 		  <div class="col-sm-1 text-right">
 		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
@@ -270,34 +270,34 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Multi-error example message -->
-		    <p class="multi-error">Unconnected endpoint at (20, 80).</p>
-		    <p class="multi-error">Unconnected endpoint at (20, 20).</p>
-		    <p class="multi-error">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
-		    <p class="multi-error">Unsupported entity type "Text".</p>
-		    <p class="multi-error">Only one part allowed per drawing.</p>
-		    <p class="multi-error">Only one part allowed per drawing.</p>
-		    <p class="multi-error">Intersection at point (30, 50).</p>
-		    <p class="multi-error">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
-		    <p class="multi-error">Part 2.</p>
-		    <p class="multi-error">Part 1.</p>
-		    <p class="multi-error">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
-		    <p class="multi-error">Unsupported entity type "Text".</p>
-		    <p class="multi-error">Intersection at point (50, 30).</p>
-		    <p class="multi-error">Unconnected endpoint at (20, 20).</p>
-		    <p class="multi-error">Unconnected endpoint at (20, 20).</p>
-		    <p class="multi-error">Only one part per drawing.</p>
-		    <p class="multi-error">Part 2.</p>
-		    <p class="multi-error">Part 2.</p>
-		    <p class="multi-error">Intersection at point (30, 50).</p>
-		    <p class="multi-error">Unconnected endpoint at (20, 80).</p>
-		    <p class="multi-error">Part 1.</p>
-		    <p class="multi-error">Intersection at point (50, 30).</p>
-		    <p class="multi-error">Only one part allowed per drawing.</p>
-		    <p class="multi-error">Intersection at point (50, 30).</p>
-		    <p class="multi-error">Unsupported entity type "Text".</p>
-		    <p class="multi-error">Part 1.</p>
-		    <p class="multi-error">Unconnected endpoint at (20, 80).</p>
-		    <p class="multi-error">Intersection at point (30, 50).</p>
+		    <p class="error-msg">Unconnected endpoint at (20, 80).</p>
+		    <p class="error-msg">Unconnected endpoint at (20, 20).</p>
+		    <p class="error-msg">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
+		    <p class="error-msg">Unsupported entity type "Text".</p>
+		    <p class="error-msg">Only one part allowed per drawing.</p>
+		    <p class="error-msg">Only one part allowed per drawing.</p>
+		    <p class="error-msg">Intersection at point (30, 50).</p>
+		    <p class="error-msg">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
+		    <p class="error-msg">Part 2.</p>
+		    <p class="error-msg">Part 1.</p>
+		    <p class="error-msg">Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.</p>
+		    <p class="error-msg">Unsupported entity type "Text".</p>
+		    <p class="error-msg">Intersection at point (50, 30).</p>
+		    <p class="error-msg">Unconnected endpoint at (20, 20).</p>
+		    <p class="error-msg">Unconnected endpoint at (20, 20).</p>
+		    <p class="error-msg">Only one part per drawing.</p>
+		    <p class="error-msg">Part 2.</p>
+		    <p class="error-msg">Part 2.</p>
+		    <p class="error-msg">Intersection at point (30, 50).</p>
+		    <p class="error-msg">Unconnected endpoint at (20, 80).</p>
+		    <p class="error-msg">Part 1.</p>
+		    <p class="error-msg">Intersection at point (50, 30).</p>
+		    <p class="error-msg">Only one part allowed per drawing.</p>
+		    <p class="error-msg">Intersection at point (50, 30).</p>
+		    <p class="error-msg">Unsupported entity type "Text".</p>
+		    <p class="error-msg">Part 1.</p>
+		    <p class="error-msg">Unconnected endpoint at (20, 80).</p>
+		    <p class="error-msg">Intersection at point (30, 50).</p>
 		  </div>
 		  <div class="col-sm-1 text-right">
 		    <!-- adding class="hidden" to removeBtn will toggle the button off -->
