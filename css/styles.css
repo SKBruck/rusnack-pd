@@ -50,81 +50,11 @@ body {
     width: 22.5%;
 }
 
+/* Highlight classes */
 
-/* td.clickable {
-  cursor: pointer;
-}
-
-td.details-control {
-  background: url('../resources/open.png') no-repeat center center;
-}
-
-tr.shown td.details-control {
-  background: url('../resources/close.png') no-repeat center center;
-}
-
-thead {
-  color: #fff;
-}
-
-.wide-th {  width: 75px;  }
-
-a.download-link {
-  color: #31a9b8;
-  text-decoration: underline;
-}
-
-/* force form groups to be displayed in block format */
-.form-group {
-  display: block !important;
-}
-
-ul.form-control-static li {
-  margin-left: -25px;
-}
-
-/* table col0 */
-
-#col0 table tr.even {
-  background-color: rgba(207,55,33,0.05);
-}
-
-#col0 table thead {
-  background-color: rgba(207,55,33,1);
-}
-
-#col0 .tab {
-  background-color: #cf3721;
-}
-
-/* table col1 */
-
-#col1 table tr.even {
-  background-color: rgba(245,190,65,0.15);
-}
-
-#col1 table thead {
-  background-color: rgba(245,190,65,1);
-  color: #fff;
-}
-
-#col1 .tab {
-  background-color: #f5be41;
-}
-
-/* table col2 */
-
-#col2 table tr.even {
-  background-color: rgba(37,128,57,0.05);
-}
-
-#col2 table thead {
-  background-color: rgba(37,128,57,1);
-  color: #fff;
-}
-
-#col2 .tab {
-  background-color: #258039;
+.error-msg:hover {
+    background-color: rgba(207,55,33,.25);
+    -webkit-tap-highlight-color: rgba(207,55,33,.25);
 }
 
 /* Footer Nav Styles */
