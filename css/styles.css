@@ -47,13 +47,6 @@ body {
     background-color: #258039;
 }
 
-/* Highlight classes */
-
-.error-msg:hover {
-    background-color: rgba(207,55,33,.25);
-    -webkit-tap-highlight-color: rgba(207,55,33,.25);
-}
-
 /* Footer Nav Styles */
 
 .footer {
