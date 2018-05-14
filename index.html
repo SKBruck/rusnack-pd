@@ -52,11 +52,31 @@
 	    </div><!-- end MS panel -->
 	  </div><!-- end MS column -->
 	</div><!-- end MS row -->
-	<!-- Begin Parts Display section of form -->
+
+	<!-- Begin Upload Drawings section of form -->
+	<div class="row">
+	  <div class="col-xs-12">
+	    <!-- Upload Drawings Display -->
+	    <div class="tab tab-ud">Upload Drawings</div>
+	    <div class="panel panel-default panel-sp">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<div class="col-xs-12 panel-file-input">
+		  <div class="form-group form-group-x">
+		    <label for="upload-drawing" class="control-label sr-only">Upload Drawings</label>
+		    <input type="file" class="btn btn-lg" id="upload-drawing">
+		  </div>
+		</div><!-- end file input column -->
+	      </div><!-- end file input panel body -->
+	    </div><!-- end file input panel -->
+	  </div><!-- end UD column -->
+	</div><!-- end UD row -->
+	
+	<!-- Begin Drawings Display section of form -->
 	<div class="row">
 	  <div class="col-xs-12">
 	    <!-- Parts Display tab -->
-	    <div class="tab tab-ud">Upload Drawings</div>
+	    <div class="tab tab-dd">Drawing Display</div>
 	    
 	    <!-- Begin Parts Display panels -->
 	    <!-- Panel 1: Single Part Panel -->
@@ -392,28 +412,27 @@
 	    
 	  </div><!-- end PD column -->
 	</div><!-- end PD row -->
-      </form><!-- end form -->
-    </div><!-- end container -->
 
+	<!-- Begin Submit section of form -->
 	<div class="row">
 	  <div class="col-xs-12">
-	    <div class="form-group">
-	      <label for="uploadDrawing" class="col-sm-2 control-label">Upload Drawing</label>
-	      <div class="col-sm-6">
-		<input type="file" class="btn" id="uploadDrawing">
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-xs-12">
-	    <!-- Help-block text for users with part display errors. To show: remove class="hidden" -->
-	    <p id="submitDisabledMsg" class="help-block">Please correct any errors before submitting.</p>
-
-	    <!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
-	    <button type="submit" id="submitBtn" class="btn btn-warning">Submit</button>
-	  </div>
-	</div>
+	    <!-- Submit Parts Display -->
+	    <div class="tab tab-sp">Submit Parts</div>
+	    <div class="panel panel-default panel-sp">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<p class="col-xs-12">Please correct any errors prior to submission.</p>
+		<div class="col-xs-12 submit-btn">
+		  <!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
+		  <button type="button" id="submitBtn" class="btn btn-primary hidden-xs">Submit</button>
+		  <button type="button" id="submitBtn" class="btn btn-primary col-xs-12 visible-xs">Submit</button>
+		</div><!-- end responsive submit button column -->
+	      </div><!-- end SP panel body -->
+	    </div><!-- end SP panel -->
+	  </div><!-- end SP column -->
+	</div><!-- end SP row -->
+	
       </form><!-- end form -->
-      
     </div><!-- end container -->
 
     <footer class="footer">
