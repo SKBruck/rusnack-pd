@@ -1,0 +1,7 @@
+/* Parts Display Styles */
+
+/* Error message hover styles for desktop */
+
+.error-msg:hover {
+    background-color: rgba(207,55,33,.25);
+}
