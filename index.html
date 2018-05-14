@@ -27,51 +27,256 @@
     </nav>
 
     <div class="container">
-
       <form class="form-horizontal">
-	<!-- Begin material size section of total form -->
+	<!-- Begin Material Size section of form -->
 	<div class="row">
 	  <div class="col-xs-12">
+	    <!-- Material Size tab -->
 	    <div class="tab tab-ms">Material Size</div>
-	    <div class="col-xs-12 col-sm-4">
-	      <div class="form-group">
-		<label for="x-measurement" class="col-sm-1 control-label">X</label>
-		<div class="col-sm-6">
-		  <input type="text" class="form-control" id="x-measurement">
+	    <!-- Begin Material Size form panel for consistent spacing -->
+	    <div class="panel panel-default panel-ms">
+	      <div class="panel-body">
+		<div class="form-group form-group-x">
+		  <label for="x-measurement" class="col-xs-2 control-label">X</label>
+		  <div class="col-xs-4">
+		    <input type="text" class="form-control" id="x-measurement">
+		  </div>
 		</div>
-	      </div><!-- end X measurement -->
-	      <div class="form-group">
-		<label for="y-measurement" class="col-sm-1 control-label">Y</label>
-		<div class="col-sm-6">
-		  <input type="text" class="form-control" id="y-measurement">
+		<div class="form-group form-group-y">
+		  <label for="y-measurement" class="col-xs-2 control-label">Y</label>
+		  <div class="col-xs-4">
+		    <input type="text" class="form-control" id="y-measurement">
+		  </div>
 		</div>
 	      </div>
-	    </div><!-- end Y measurement -->
-	  </div>
-	</div><!-- end material size section of form -->
-
-	<!-- Begin upload drawings and parts display section of form -->
+	    </div><!-- end MS panel -->
+	  </div><!-- end MS column -->
+	</div><!-- end MS row -->
+	<!-- Begin Parts Display section of form -->
 	<div class="row">
 	  <div class="col-xs-12">
+	    <!-- Parts Display tab -->
 	    <div class="tab tab-ud">Upload Drawings</div>
-
-	    <!-- Parts displays appear in panels -->
-
-	    <!-- start Single Part panel -->
-	    <div class="panel panel-default pd-panel">
+	    
+	    <!-- Begin Parts Display panels -->
+	    <!-- Panel 1: Single Part Panel -->
+	    <div class="panel panel-default panel-sp">
 	      <div class="panel-body">
-		<div class="row">
-		  <div class="col-sm-2 pd-img">
-		    <!-- Single Part -->
-		    <svg width="100" height="100">
-		      <mask id="inner-profiles-4321">
-			<rect width="100%" height="100%" fill="white"/>
-			<circle cx="50" cy="50" r="10" fill="black" />
-		      </mask>
+		<!-- Begin panel image column -->
+		<div class="col-xs-12 col-sm-2 panel-img">
+		  <!-- Single Part svg -->
+		  <svg width="100" height="100">
+		    <mask id="inner-profiles-4321">
+		      <rect width="100%" height="100%" fill="white"/>
+		      <circle cx="50" cy="50" r="10" fill="black" />
+		    </mask>
 
-		      <rect x="10" y="10" width="75" height="60" fill="#6699ff" mask="url(#inner-profiles-4321)" />
-		    </svg>
-		  </div>
+		    <rect x="10" y="10" width="75" height="60" fill="#6699ff" mask="url(#inner-profiles-4321)" />
+		  </svg>
+		</div><!-- end panel image column -->
+		<!-- Begin panel message column -->
+		<div class="col-xs-12 col-sm-9 panel-msg">
+		  <!-- Input chunks: more can be added as needed -->
+		  <div class="form-group form-group-sp-input">
+		    <label for="quantity" class="control-label col-xs-4 col-sm-2">Quantity</label>
+		    <div class="col-xs-8 col-sm-3">
+		      <input type="text" class="form-control" id="quantity" placeholder="100,000">
+		    </div>
+		  </div><!-- end single-part units input chunk -->
+		  <div class="form-group form-group-sp-input">
+		    <label for="units" class="control-label col-xs-4 col-sm-2">Units</label>
+		    <div class="col-xs-8 col-sm-3">
+		      <input type="text" class="form-control" id="units" placeholder="mm">
+		    </div>
+		  </div><!-- end single-part units input chunk -->
+		</div><!-- end panel message column -->
+		<!-- Begin toggable delete button column -->
+		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
+		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		  </button>
+		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		</div><!-- end toggable delete button column -->
+	      </div><!-- end panel body -->
+	    </div><!-- end panel 1: Single Part Panel -->
+	    
+	    <!-- Panel 2: Total Parse Error Panel -->
+	    <div class="panel panel-default panel-tpe">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<div class="col-xs-2 panel-img">
+		  <!-- Total Parse Error; no svg, using glyphicon picture symbol -->
+		  <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+		</div><!-- end panel image column -->
+		<!-- Begin panel message column -->
+		<div class="col-xs-9 panel-msg">
+		</div><!-- end panel message column -->
+		<!-- Begin toggable delete button column -->
+		<div class="col-xs-1 panel-del-btn">
+		  <button type="button" id="removeBtn" class="btn btn-danger">
+		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		  </button>
+		</div><!-- end toggable delete button column -->
+	      </div><!-- end panel body -->
+	    </div><!-- end panel 2: Total Parse Error Panel -->
+	    
+	    <!-- Panel 3: Unsupported Entity Type Error Panel -->
+	    <div class="panel panel-default panel-uet">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<div class="col-xs-2 panel-img">
+		  <!-- Unsupported Entity Type SVG -->
+		  <svg width="100" height="100">
+		    <mask id="inner-profiles-1234">
+		      <rect width="100%" height="100%" fill="white" />
+		      <circle cx="50" cy="50" r="20" fill="black" />
+		    </mask>
+
+		    <circle cx="50" cy="50" r="40" fill="#6699ff" mask="url(#inner-profiles-1234)" />
+		  </svg>
+		</div><!-- end panel image column -->
+		<!-- Begin panel message column -->
+		<div class="col-xs-9 panel-msg">
+		</div><!-- end panel message column -->
+		<!-- Begin toggable delete button column -->
+		<div class="col-xs-1 panel-del-btn">
+		  <button type="button" id="removeBtn" class="btn btn-danger">
+		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		  </button>
+		</div><!-- end toggable delete button column -->
+	      </div><!-- end panel body -->
+	    </div><!-- end panel 3: Unsupported Entity Type Error Panel -->
+	    
+	    <!-- Panel 4: Disjoint Part Error Panel -->
+	    <div class="panel panel-default panel-dpe">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<div class="col-xs-2 panel-img">
+		  <!-- Disjoint Part SVG-->
+		  <svg width="100" height="100">
+		    <path d="M20 20 L80 20 L80 80 L20 80" stroke-width="3" stroke="black" fill="none"/>
+
+		    <circle data-error_id="0" cx="20" cy="20" r="5" fill="red" />
+		    <circle data-error_id="1" cx="20" cy="80" r="5" fill="red" />
+		  </svg>
+		</div><!-- end panel image column -->
+		<!-- Begin panel message column -->
+		<div class="col-xs-9 panel-msg">
+		</div><!-- end panel message column -->
+		<!-- Begin toggable delete button column -->
+		<div class="col-xs-1 panel-del-btn">
+		  <button type="button" id="removeBtn" class="btn btn-danger">
+		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		  </button>
+		</div><!-- end toggable delete button column -->
+	      </div><!-- end panel body -->
+	    </div><!-- end panel 4: Disjoint Part Error Panel -->
+	    
+	    <!-- Panel 5: Point Intersection Error Panel -->
+	    <div class="panel panel-default panel-pie">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<div class="col-xs-2 panel-img">
+		  <!-- Point Intersection SVG -->
+		  <svg width="100" height="100">
+		    <circle cx="30" cy="30" r="20" stroke-width="3" stroke="black" fill="none" />
+		    <rect x="30" y="30" width="50" height="60" stroke-width="3" stroke="black" fill="none" />
+
+		    <circle data-error_id="0" cx="50" cy="30" r="5" fill="red" />
+		    <circle data-error_id="1" cx="30" cy="50" r="5" fill="red" />
+		  </svg>
+		</div><!-- end panel image column -->
+		<!-- Begin panel message column -->
+		<div class="col-xs-9 panel-msg">
+		</div><!-- end panel message column -->
+		<!-- Begin toggable delete button column -->
+		<div class="col-xs-1 panel-del-btn">
+		  <button type="button" id="removeBtn" class="btn btn-danger">
+		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		  </button>
+		</div><!-- end toggable delete button column -->
+	      </div><!-- end panel body -->
+	    </div><!-- end panel 5: Point Intersection Error Panel -->
+	    
+	    <!-- Panel 6: Line Intersection Error Panel -->
+	    <div class="panel panel-default panel-lie">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<div class="col-xs-2 panel-img">
+		  <!-- Line Intersection SVG -->
+		  <svg width="100" height="100">
+		    <rect x="20" y="20" width="30" height="60" fill="#ff99ff" />
+		    <rect x="50" y="40" width="30" height="50" fill="#99ff99" />
+
+		    <path data-error_id="0" d="M50 40 L50 80" stroke-width="3" stroke="red" />
+		    <circle data-error_id="0" cx="50" cy="40" r="5" fill="red" />
+		    <circle data-error_id="0" cx="50" cy="80" r="5" fill="red" />
+		  </svg>
+		</div><!-- end panel image column -->
+		<!-- Begin panel message column -->
+		<div class="col-xs-9 panel-msg">
+		</div><!-- end panel message column -->
+		<!-- Begin toggable delete button column -->
+		<div class="col-xs-1 panel-del-btn">
+		  <button type="button" id="removeBtn" class="btn btn-danger">
+		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		  </button>
+		</div><!-- end toggable delete button column -->
+	      </div><!-- end panel body -->
+	    </div><!-- end panel 6: Line Intersection Error Panel -->
+	    
+	    <!-- Panel 7: Multipart Error Panel -->
+	    <div class="panel panel-default panel-mpe">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<div class="col-xs-2 panel-img">
+		  <!-- Multipart -->
+		  <svg width="100" height="100">
+		    <rect data-error_id="0" x="20" y="20" width="30" height="30" fill="#ff99ff" />
+		    <circle data-error_id="1" cx="70" cy="60" r="20" fill="#6699ff" />
+		  </svg>
+		</div><!-- end panel image column -->
+		<!-- Begin panel message column -->
+		<div class="col-xs-9 panel-msg">
+		</div><!-- end panel message column -->
+		<!-- Begin toggable delete button column -->
+		<div class="col-xs-1 panel-del-btn">
+		  <button type="button" id="removeBtn" class="btn btn-danger">
+		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		  </button>
+		</div><!-- end toggable delete button column -->
+	      </div><!-- end panel body -->
+	    </div><!-- end panel 7: Multipart Error Panel -->
+	    
+	    <!-- Panel 8: Multi-Error Example Panel -->
+	    <div class="panel panel-default panel-meex">
+	      <div class="panel-body">
+		<!-- Begin panel image column -->
+		<div class="col-xs-2 panel-img">
+		  <!-- Multi-error example svg -->
+		  <svg width="100" height="100">
+		    <rect width="100%" height="100%" fill="white" />
+		    <circle cx="50" cy="50" r="20" fill="black" />
+		    <circle cx="50" cy="50" r="40" fill="#6699ff" mask="url(#inner-profiles-1234)" />
+		  </svg>
+		</div><!-- end panel image column -->
+		<!-- Begin panel message column -->
+		<div class="col-xs-9 panel-msg">
+		</div><!-- end panel message column -->
+		<!-- Begin toggable delete button column -->
+		<div class="col-xs-1 panel-del-btn">
+		  <button type="button" id="removeBtn" class="btn btn-danger">
+		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		  </button>
+		</div><!-- end toggable delete button column -->
+	      </div><!-- end panel body -->
+	    </div><!-- end panel 8: Multi-Error Example Panel -->
+	    
+	  </div><!-- end PD column -->
+	</div><!-- end PD row -->
+      </form><!-- end form -->
+    </div><!-- end container -->
+      
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Input chunks: more can be added as needed -->
 		    <div class="form-group form-inline">
@@ -91,7 +296,7 @@
 		  </div>
 		</div>
 	      </div>
-	    </div><!-- end Single Part panel -->
+            </div><!-- end Single Part panel -->
 
 	    <!-- start Total Parse Error panel -->
 	    <div class="panel panel-default pd-panel">
@@ -242,7 +447,7 @@
 		  </div>
 		  <div class="col-sm-9 pd-msg pd-err-msg">
 		    <!-- Multipart error message -->
-		    <p>Only one part allowed per drawing.</p>
+		    <p class="error-msg">Only one part allowed per drawing.</p>
 		    <p class="error-msg">Part 1.</p>
 		    <p class="error-msg">Part 2.</p>
 		  </div>
@@ -306,25 +511,29 @@
 		    </button>
 		  </div>
 		</div>
-	      </div>
-	    </div><!-- end Multi-error example panel -->
+              </div>
+            </div><!-- end Multi-error example panel -->
 	    
 	  </div>
 	</div><!-- end part display panel -->
 
-	<!-- begin upload drawings section of form -->
-	<div class="col-xs-12">
-	  <div class="form-group">
-	    <label for="uploadDrawing">Upload Drawings</label>
-	    <input type="file" id="uploadDrawing">
+	<div class="row">
+	  <div class="col-xs-12">
+	    <div class="form-group">
+	      <label for="uploadDrawing" class="col-sm-2 control-label">Upload Drawing</label>
+	      <div class="col-sm-6">
+		<input type="file" class="btn" id="uploadDrawing">
+	      </div>
+	    </div>
 	  </div>
-	</div><!-- end upload drawings section of form -->
-	
-	<!-- Help-block text for users with part display errors. To show: remove class="hidden" -->
-	<p id="submitDisabledMsg" class="help-block hidden">Please correct any errors before submitting.</p>
+	  <div class="col-xs-12">
+	    <!-- Help-block text for users with part display errors. To show: remove class="hidden" -->
+	    <p id="submitDisabledMsg" class="help-block">Please correct any errors before submitting.</p>
 
-	<!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
-	<button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+	    <!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
+	    <button type="submit" id="submitBtn" class="btn btn-warning">Submit</button>
+	  </div>
+	</div>
       </form><!-- end form -->
       
     </div><!-- end container -->
