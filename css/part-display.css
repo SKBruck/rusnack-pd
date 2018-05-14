@@ -5,3 +5,9 @@
 .error-msg:hover {
     background-color: rgba(207,55,33,.25);
 }
+
+/* Collapse/Expand errors section style */
+
+.collapse-err {
+    margin-bottom: 1.35em;
+}
