@@ -1,5 +1,12 @@
 /* Parts Display Styles */
 
+/* Glyphicon styles */
+
+.glyphicon-picture {
+    font-size: 5em;
+    padding-left: .15em;
+}
+
 /* Error message styles */
 
 .alert {
@@ -14,4 +21,13 @@
 
 .collapse-err {
     margin-bottom: 1.35em;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .glyphicon-picture {
+	padding-left: .13em;
+	margin-bottom: .3em;
+    }
 }
