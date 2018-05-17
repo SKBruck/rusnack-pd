@@ -40,4 +40,12 @@
     }
     .ms-input {
 	margin-left: 3px;
+    }
+    .panel-del-btn {
+	margin-top: 1em;
+    }
+    .btn-danger {
+	padding-top: .75em !important;
+	padding-bottom: .75em !important;
+    }
 }
