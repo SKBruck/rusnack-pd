@@ -30,4 +30,7 @@
 	padding-left: .13em;
 	margin-bottom: .3em;
     }
+    .control-label {
+	padding-top: 7px !important;
+    }
 }
