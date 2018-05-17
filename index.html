@@ -464,5 +464,19 @@
         $(this).css('background-color', 'rgba(207,55,33,.085)');
       });​
     </script>
+    <script>
+      $(document).ready(function(){
+        $('.collapse-err').click(function(){
+          var $this = $(this);
+          $this.toggleClass('collapse-err');
+          if($this.hasClass('collapse-err')){
+            $this.text('See More');
+          } else {
+            $this.text('See Less');
+            $this.css('margin-bottom', '1.5em');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
