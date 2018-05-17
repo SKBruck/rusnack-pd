@@ -36,6 +36,8 @@
     }
     .control-label {
 	padding-top: 7px !important;
+    }
+    .ms-label {
 	padding-left: 0;
     }
     .ms-input {
