@@ -23,6 +23,8 @@
 
 .highlight-tip {
     font-size: 1.2em;
+    margin-left: .5em;
+    margin-bottom: .5em;
 }
 
 /* Collapse/Expand errors section style */
