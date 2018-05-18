@@ -43,12 +43,12 @@
     .control-label {
 	padding-top: 7px !important;
     }
-    .ms-label {
-	padding-left: 0;
+    .height {
+	margin-bottom: 15px !important;
     }
-    .ms-input {
+    /*.ms-input {
 	margin-left: 3px;
-    }
+    }*/
     .panel-del-btn {
 	margin-top: 1em;
     }
