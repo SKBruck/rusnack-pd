@@ -32,7 +32,7 @@
 	<div class="row">
 	  <div class="col-xs-12">
 	    <div class="tab tab-ms">Material Size</div>
-	    <!-- START PANEL 1 -->
+	    <!-- Start Material Size panel -->
             <div class="panel panel-default">
               <div class="panel-body">
                 <div class="row">
@@ -50,316 +50,278 @@
 		  </div>
                 </div>
               </div>
-            </div>
-            <!-- END PANEL 1 -->
+            </div><!-- end material size panel -->
 	  </div>
-	</div>
+	</div><!-- end material size section of form -->
 
-	<!-- Begin Upload Drawings section of form -->
+	<!-- Begin upload drawings section of form -->
 	<div class="row">
 	  <div class="col-xs-12">
-	    <!-- Upload Drawings Display -->
 	    <div class="tab tab-ud">Upload Drawings</div>
-	    <div class="panel panel-default panel-sp">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-12 panel-file-input">
-		  <div class="form-group form-group-x">
-		    <label for="upload-drawing" class="control-label sr-only">Upload Drawings</label>
-		    <input type="file" class="btn" id="upload-drawing">
+	    <!-- Start upload drawings panel -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12">
+		    <div class="form-group form-group-x">
+		      <label for="upload-drawing" class="control-label sr-only">Upload Drawings</label>
+		      <input type="file" class="btn" id="upload-drawing">
+		    </div>
 		  </div>
-		</div><!-- end file input column -->
-	      </div><!-- end file input panel body -->
-	    </div><!-- end file input panel -->
-	  </div><!-- end UD column -->
-	</div><!-- end UD row -->
-	
-	<!-- Begin Drawings Display section of form -->
+                </div>
+              </div>
+            </div><!-- end upload drawings panel -->
+	  </div>
+	</div><!-- end upload drawings section of form -->
+
+	<!-- Begin drawing display section of form -->
 	<div class="row">
 	  <div class="col-xs-12">
-	    <!-- Parts Display tab -->
 	    <div class="tab tab-dd">Drawing Display</div>
 	    
-	    <!-- Begin Parts Display panels -->
-	    <!-- Panel 1: Single Part Panel -->
-	    <div class="panel panel-default panel-sp">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-12 col-sm-2 panel-img">
-		  <!-- Single Part svg -->
-		  <svg width="100" height="100">
-		    <mask id="inner-profiles-4321">
-		      <rect width="100%" height="100%" fill="white"/>
-		      <circle cx="50" cy="50" r="10" fill="black" />
-		    </mask>
+	    <!-- P1: Start single part panel -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 panel-img">
+		    <svg width="100" height="100">
+		      <mask id="inner-profiles-4321">
+			<rect width="100%" height="100%" fill="white"/>
+			<circle cx="50" cy="50" r="10" fill="black" />
+		      </mask>
+		      <rect x="10" y="10" width="75" height="60" fill="#6699ff" mask="url(#inner-profiles-4321)" />
+		    </svg>
+		  </div>
+                  <div class="col-xs-12 col-sm-9 panel-msg">
+		    <!-- Input chunks: more can be added as needed -->
+		    <div class="row sp-input">
+                      <div class="col-xs-3 col-sm-2">
+			<label for="quantity" class="control-label inputs">Quantity</label>
+		      </div>
+                      <div class="col-xs-9 col-sm-3">
+			<input type="text" class="form-control inputs" id="quantity" placeholder="100,000">
+		      </div>
+                    </div><!-- end single-part units input chunk -->
+		    <!-- Input chunks: more can be added as needed -->
+		    <div class="row sp-input">
+                      <div class="col-xs-3 col-sm-2">
+			<label for="units" class="control-label inputs">Units</label>
+		      </div>
+                      <div class="col-xs-9 col-sm-3">
+			<input type="text" class="form-control inputs" id="units" placeholder="mm">
+		      </div>
+                    </div><!-- end single-part units input chunk -->
+		  </div>
+                  <div class="col-xs-12 col-sm-1 text-right panel-remove-btn">
+		    <!-- toggle-able remove-btn -->
+		    <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		    <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end single part panel -->
 
-		    <rect x="10" y="10" width="75" height="60" fill="#6699ff" mask="url(#inner-profiles-4321)" />
-		  </svg>
-		</div><!-- end panel image column -->
-		<!-- Begin panel message column -->
-		<div class="col-xs-12 col-sm-9 panel-msg">
-		  <!-- Input chunks: more can be added as needed -->
-		  <div class="form-group form-group-sp-input">
-		    <label for="quantity" class="control-label col-xs-4 col-sm-2">Quantity</label>
-		    <div class="col-xs-8 col-sm-3">
-		      <input type="text" class="form-control" id="quantity" placeholder="100,000">
+	    <!-- Panel 2: Total Parse Error Panel  -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 panel-img">
+		    <!-- Total Parse Error; no svg, using glyphicon picture symbol -->
+		    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+		  </div>
+                  <div class="col-xs-12 col-sm-9 panel-msg">
+		    <p class="text-danger">
+		      File could not be used because it is a binary dxf. Please convert to an ASCII dxf format.
+		    </p>
+		  </div>
+                  <div class="col-xs-12 col-sm-1 text-right panel-remove-btn">
+		    <!-- toggle-able remove-btn -->
+		    <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		    <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end total parse error panel -->
+
+	    <!-- Panel 3: Unsupported Entity Type Error Panel  -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 panel-img">
+		    <svg width="100" height="100">
+		      <mask id="inner-profiles-1234">
+			<rect width="100%" height="100%" fill="white" />
+			<circle cx="50" cy="50" r="20" fill="black" />
+		      </mask>
+		      <circle cx="50" cy="50" r="40" fill="#6699ff" mask="url(#inner-profiles-1234)" />
+		    </svg>
+		  </div>
+                  <div class="col-xs-12 col-sm-9 panel-msg">
+		    <p class="text-danger">
+		      Unsupported entity type "TEXT."
+		    </p>
+		  </div>
+                  <div class="col-xs-12 col-sm-1 text-right panel-remove-btn">
+		    <!-- toggle-able remove-btn -->
+		    <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		    <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end unsupported entity type panel -->
+
+	    <!-- Panel 4: Disjoint Part Error Panel  -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 panel-img">
+		    <svg width="100" height="100">
+		      <path d="M20 20 L80 20 L80 80 L20 80" stroke-width="3" stroke="black" fill="none"/>
+		      <circle data-error_id="0" cx="20" cy="20" r="5" fill="red" />
+		      <circle data-error_id="1" cx="20" cy="80" r="5" fill="red" />
+		    </svg>
+		  </div>
+                  <div class="col-xs-12 col-sm-9 panel-msg">
+		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+		      Unconnected endpoint at (2, 2).
 		    </div>
-		  </div><!-- end single-part units input chunk -->
-		  <div class="form-group form-group-sp-input">
-		    <label for="units" class="control-label col-xs-4 col-sm-2">Units</label>
-		    <div class="col-xs-8 col-sm-3">
-		      <input type="text" class="form-control" id="units" placeholder="mm">
+		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+		      Unconnected endpoint at (1, 0).
 		    </div>
-		  </div><!-- end single-part units input chunk -->
-		</div><!-- end panel message column -->
-		<!-- Begin toggable delete button column -->
-		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
-		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
-		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		  </button>
-		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
-		</div><!-- end toggable delete button column -->
-	      </div><!-- end panel body -->
-	    </div><!-- end panel 1: Single Part Panel -->
-	    
-	    <!-- Panel 2: Total Parse Error Panel -->
-	    <div class="panel panel-default panel-tpe">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-2 panel-img">
-		  <!-- Total Parse Error; no svg, using glyphicon picture symbol -->
-		  <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
-		</div><!-- end panel image column -->
-		<!-- Begin panel message column -->
-		<div class="col-xs-12 col-sm-9 panel-msg">
-		  <p class="text-danger">
-		    File could not be used because it is a binary dxf. Please convert to an ASCII dxf format.
-		  </p>
-		</div><!-- end panel message column -->
-		<!-- Begin toggable delete button column -->
-		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
-		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
-		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		  </button>
-		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
-		</div><!-- end toggable delete button column -->
-	      </div><!-- end panel body -->
-	    </div><!-- end panel 2: Total Parse Error Panel -->
-	    
-	    <!-- Panel 3: Unsupported Entity Type Error Panel -->
-	    <div class="panel panel-default panel-uet">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-2 panel-img">
-		  <!-- Unsupported Entity Type SVG -->
-		  <svg width="100" height="100">
-		    <mask id="inner-profiles-1234">
-		      <rect width="100%" height="100%" fill="white" />
-		      <circle cx="50" cy="50" r="20" fill="black" />
-		    </mask>
+		  </div>
+                  <div class="col-xs-12 col-sm-1 text-right panel-remove-btn">
+		    <!-- toggle-able remove-btn -->
+		    <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		    <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end disjoint part panel -->
 
-		    <circle cx="50" cy="50" r="40" fill="#6699ff" mask="url(#inner-profiles-1234)" />
-		  </svg>
-		</div><!-- end panel image column -->
-		<!-- Begin panel message column -->
-		<div class="col-xs-12 col-sm-9 panel-msg">
-		  <p class="text-danger">
-		    Unsupported entity type "TEXT."
-		  </p>
-		</div><!-- end panel message column -->
-		<!-- Begin toggable delete button column -->
-		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
-		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
-		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		  </button>
-		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
-		</div><!-- end toggable delete button column -->
-	      </div><!-- end panel body -->
-	    </div><!-- end panel 3: Unsupported Entity Type Error Panel -->
-	    
-	    <!-- Panel 4: Disjoint Part Error Panel -->
-	    <div class="panel panel-default panel-dpe">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-2 panel-img">
-		  <!-- Disjoint Part SVG-->
-		  <svg width="100" height="100">
-		    <path d="M20 20 L80 20 L80 80 L20 80" stroke-width="3" stroke="black" fill="none"/>
+	    <!-- Panel 5: Point Intersection Error Panel  -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 panel-img">
+		    <svg width="100" height="100">
+		      <circle cx="30" cy="30" r="20" stroke-width="3" stroke="black" fill="none" />
+		      <rect x="30" y="30" width="50" height="60" stroke-width="3" stroke="black" fill="none" />
+		      <circle data-error_id="0" cx="50" cy="30" r="5" fill="red" />
+		      <circle data-error_id="1" cx="30" cy="50" r="5" fill="red" />
+		    </svg>
+		  </div>
+                  <div class="col-xs-12 col-sm-9 panel-msg">
+		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+		      Intersection along ((1, 0), (1, 1)).
+		    </div>
+		  </div>
+                  <div class="col-xs-12 col-sm-1 text-right panel-remove-btn">
+		    <!-- toggle-able remove-btn -->
+		    <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		    <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end point intersection panel -->
 
-		    <circle data-error_id="0" cx="20" cy="20" r="5" fill="red" />
-		    <circle data-error_id="1" cx="20" cy="80" r="5" fill="red" />
-		  </svg>
-		</div><!-- end panel image column -->
-		<!-- Begin panel message column -->
-		<div class="col-xs-12 col-sm-9 panel-msg">
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Unconnected endpoint at (2, 2).
+	    <!-- Panel 6: Line Intersection Error Panel  -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 panel-img">
+		    <svg width="100" height="100">
+		      <rect x="20" y="20" width="30" height="60" fill="#ff99ff" />
+		      <rect x="50" y="40" width="30" height="50" fill="#99ff99" />
+		      <path data-error_id="0" d="M50 40 L50 80" stroke-width="3" stroke="red" />
+		      <circle data-error_id="0" cx="50" cy="40" r="5" fill="red" />
+		      <circle data-error_id="0" cx="50" cy="80" r="5" fill="red" />
+		    </svg>
 		  </div>
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Unconnected endpoint at (1, 0).
+                  <div class="col-xs-12 col-sm-9 panel-msg">
+		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+		      Intersection along ((1, 0), (1, 1)).
+		    </div>
 		  </div>
-		</div><!-- end panel message column -->
-		<!-- Begin toggable delete button column -->
-		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
-		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
-		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		  </button>
-		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
-		</div><!-- end toggable delete button column -->
-	      </div><!-- end panel body -->
-	    </div><!-- end panel 4: Disjoint Part Error Panel -->
-	    
-	    <!-- Panel 5: Point Intersection Error Panel -->
-	    <div class="panel panel-default panel-pie">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-2 panel-img">
-		  <!-- Point Intersection SVG -->
-		  <svg width="100" height="100">
-		    <circle cx="30" cy="30" r="20" stroke-width="3" stroke="black" fill="none" />
-		    <rect x="30" y="30" width="50" height="60" stroke-width="3" stroke="black" fill="none" />
+                  <div class="col-xs-12 col-sm-1 text-right panel-remove-btn">
+		    <!-- toggle-able remove-btn -->
+		    <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		    <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end line intersection panel -->
 
-		    <circle data-error_id="0" cx="50" cy="30" r="5" fill="red" />
-		    <circle data-error_id="1" cx="30" cy="50" r="5" fill="red" />
-		  </svg>
-		</div><!-- end panel image column -->
-		<!-- Begin panel message column -->
-		<div class="col-xs-12 col-sm-9 panel-msg">
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Intersection along ((1, 0), (1, 1)).
+	    <!-- P7: Start multi-part panel -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 panel-img">
+		    <svg width="100" height="100">
+		      <rect data-error_id="0" x="20" y="20" width="30" height="30" fill="#ff99ff" />
+		      <circle data-error_id="1" cx="70" cy="60" r="20" fill="#6699ff" />
+		    </svg>
 		  </div>
-		</div><!-- end panel message column -->
-		<!-- Begin toggable delete button column -->
-		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
-		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
-		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		  </button>
-		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
-		</div><!-- end toggable delete button column -->
-	      </div><!-- end panel body -->
-	    </div><!-- end panel 5: Point Intersection Error Panel -->
-	    
-	    <!-- Panel 6: Line Intersection Error Panel -->
-	    <div class="panel panel-default panel-lie">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-2 panel-img">
-		  <!-- Line Intersection SVG -->
-		  <svg width="100" height="100">
-		    <rect x="20" y="20" width="30" height="60" fill="#ff99ff" />
-		    <rect x="50" y="40" width="30" height="50" fill="#99ff99" />
-
-		    <path data-error_id="0" d="M50 40 L50 80" stroke-width="3" stroke="red" />
-		    <circle data-error_id="0" cx="50" cy="40" r="5" fill="red" />
-		    <circle data-error_id="0" cx="50" cy="80" r="5" fill="red" />
-		  </svg>
-		</div><!-- end panel image column -->
-		<!-- Begin panel message column -->
-		<div class="col-xs-12 col-sm-9 panel-msg">
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Intersection along ((1, 0), (1, 1)).
-		  </div>
-		</div><!-- end panel message column -->
-		<!-- Begin toggable delete button column -->
-		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
-		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
-		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		  </button>
-		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
-		</div><!-- end toggable delete button column -->
-	      </div><!-- end panel body -->
-	    </div><!-- end panel 6: Line Intersection Error Panel -->
-	    
-	    <!-- Panel 7: Multipart Error Panel -->
-	    <div class="panel panel-default panel-mpe">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-2 panel-img">
-		  <!-- Multipart -->
-		  <svg width="100" height="100">
-		    <rect data-error_id="0" x="20" y="20" width="30" height="30" fill="#ff99ff" />
-		    <circle data-error_id="1" cx="70" cy="60" r="20" fill="#6699ff" />
-		  </svg>
-		</div><!-- end panel image column -->
-		<!-- Begin panel message column -->
-		<div class="col-xs-12 col-sm-9 panel-msg">
-		  <p class="text-danger">
-		    Only one part allowed per drawing.
-		  </p>
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Part 1.
-		  </div>
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Part 2.
-		  </div>
-		</div><!-- end panel message column -->
-		<!-- Begin toggable delete button column -->
-		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
-		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
-		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		  </button>
-		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
-		</div><!-- end toggable delete button column -->
-	      </div><!-- end panel body -->
-	    </div><!-- end panel 7: Multipart Error Panel -->
-	    
-	    <!-- Panel 8: Multi-Error Example Panel -->
-	    <div class="panel panel-default panel-meex">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<div class="col-xs-2 panel-img">
-		  <!-- Multi-error example svg -->
-		  <svg width="100" height="100">
-		    <rect width="100%" height="100%" fill="white" />
-		    <circle cx="50" cy="50" r="20" fill="black" />
-		    <circle cx="50" cy="50" r="40" fill="#6699ff" mask="url(#inner-profiles-1234)" />
-		  </svg>
-		</div><!-- end panel image column -->
-		<!-- Begin panel message column -->
-		<div class="col-xs-12 col-sm-9 panel-msg">
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Unconnected endpoint at (20, 80).
-		  </div>
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Unconnected endpoint at (20, 80).
-		  </div>
-		  <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		    <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		    Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.
-		  </div>
-		  <p class="text-danger">
-		    Unsupported entity type "TEXT."
-		  </p>
-		  <p class="text-danger">
-		    Only one part allowed per drawing.
-		  </p>
-		  <div class="collapse" id="collapseErrors">
+                  <div class="col-xs-12 col-sm-9 panel-msg">
 		    <p class="text-danger">
 		      Only one part allowed per drawing.
 		    </p>
 		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
 		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Intersection at point (30, 50).
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.
+		      Part 1.
 		    </div>
 		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
 		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
 		      Part 2.
 		    </div>
+		  </div>
+                  <div class="col-xs-12 col-sm-1 text-right panel-remove-btn">
+		    <!-- toggle-able remove-btn -->
+		    <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		    <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end multi-part error panel -->
+
+	     <!-- P8: Start multi-error panel -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 panel-img">
+		    <svg width="100" height="100">
+		      <mask id="inner-profiles-1234">
+			<rect width="100%" height="100%" fill="white"></rect>
+			<circle cx="50" cy="50" r="20" fill="black"></circle>
+		      </mask>
+		      <circle cx="50" cy="50" r="40" fill="#6699ff" mask="url(#inner-profiles-1234)"></circle>
+		    </svg>
+		  </div>
+                  <div class="col-xs-12 col-sm-9 panel-msg">
 		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
 		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Part 1.
+		      Unconnected endpoint at (20, 80).
+		    </div>
+		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+		      Unconnected endpoint at (20, 80).
 		    </div>
 		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
 		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
@@ -368,104 +330,139 @@
 		    <p class="text-danger">
 		      Unsupported entity type "TEXT."
 		    </p>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Intersection at point (50, 30).
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Unconnected endpoint at (20, 20).
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Unconnected endpoint at (20, 20).
-		    </div>
 		    <p class="text-danger">
 		      Only one part allowed per drawing.
 		    </p>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Part 2.
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Part 2.
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Intersection at point (30, 50).
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Unconnected endpoint at (20, 80).
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Part 1.
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Intersection at point (50, 30).
-		    </div>
-		    <p class="text-danger">
-		      Only one part allowed per drawing.
-		    </p>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Intersection at point (50, 30).
-		    </div>
-		    <p class="text-danger">
-		      Unsupported entity type "TEXT."
-		    </p>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Part 1.
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Unconnected endpoint at (20, 80).
-		    </div>
-		    <div class="alert alert-danger error-msg" id="error-tap" role="alert">
-		      <span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
-		      Intersection at point (30, 50).
-		    </div>
-		  </div><!-- end collapseErrors -->
-		  <!-- begin collapseError button -->
-		  <button class="btn btn-primary col-xs-12 col-sm-3 collapse-err" type="button" data-toggle="collapse" data-target="#collapseErrors" aria-expanded="false" aria-controls="collapseErrors">See More</button>
-		</div><!-- end panel message column -->
-		<!-- Begin toggable delete button column -->
-		<div class="col-xs-12 col-sm-1 text-right panel-del-btn">
-		  <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
-		    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-		  </button>
-		  <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
-		</div><!-- end toggable delete button column -->
-	      </div><!-- end panel body -->
-	    </div><!-- end panel 8: Multi-Error Example Panel -->
+		    <div class="collapse" id="collapseErrors">
+		      <p class="text-danger">
+			Only one part allowed per drawing.
+		      </p>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Intersection at point (30, 50).
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Part 2.
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Part 1.
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Intersection along line ((50, 40), (50, 80)). This is also a very long error string that hopfully will never be this long but just in case.
+		      </div>
+		      <p class="text-danger">
+			Unsupported entity type "TEXT."
+		      </p>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Intersection at point (50, 30).
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Unconnected endpoint at (20, 20).
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Unconnected endpoint at (20, 20).
+		      </div>
+		      <p class="text-danger">
+			Only one part allowed per drawing.
+		      </p>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Part 2.
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Part 2.
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Intersection at point (30, 50).
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Unconnected endpoint at (20, 80).
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Part 1.
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Intersection at point (50, 30).
+		      </div>
+		      <p class="text-danger">
+			Only one part allowed per drawing.
+		      </p>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Intersection at point (50, 30).
+		      </div>
+		      <p class="text-danger">
+			Unsupported entity type "TEXT."
+		      </p>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Part 1.
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Unconnected endpoint at (20, 80).
+		      </div>
+		      <div class="alert alert-danger error-msg" id="error-tap" role="alert">
+			<span class="glyphicon glyphicon-lg glyphicon-question-sign pull-right highlight-tip" data-toggle="popover" data-placement="top" data-content="Tap or hover to highlight the error." aria-hidden="true"></span>
+			Intersection at point (30, 50).
+		      </div>
+		    </div><!-- end collapseErrors -->
+		    <!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
+		    <button type="button" id="collapseErr" class="btn btn-primary hidden-xs collapse-err" data-toggle="collapse" data-target="#collapseErrors" aria-expanded="false" aria-controls="collapseErrors">See More</button>
+		    <button type="button" id="collapseErr" class="btn btn-primary col-xs-12 visible-xs collapse-err" data-toggle="collapse" data-target="#collapseErrors" aria-expanded="false" aria-controls="collapseErrors">See More</button>
+		  </div><!-- end panel message -->
+                  <div class="col-xs-12 col-sm-1 text-right panel-remove-btn">
+		    <!-- toggle-able remove-btn -->
+		    <button type="button" id="removeBtn" class="btn btn-danger hidden-xs">
+		      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		    </button>
+		    <button type="button" id="removeBtn" class="btn btn-danger col-xs-12 visible-xs">Remove</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end multi-error panel -->
 	    
-	  </div><!-- end PD column -->
-	</div><!-- end PD row -->
+	  </div>
+	</div><!-- end upload drawings section of form -->
 
-	<!-- Begin Submit section of form -->
+	<!-- Begin submit section of form -->
 	<div class="row">
 	  <div class="col-xs-12">
-	    <!-- Submit Parts Display -->
 	    <div class="tab tab-sp">Submit Parts</div>
-	    <div class="panel panel-default panel-sp">
-	      <div class="panel-body">
-		<!-- Begin panel image column -->
-		<p class="col-xs-12">Please correct any errors prior to submission.</p>
-		<div class="col-xs-12 submit-btn">
-		  <!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
-		  <button type="button" id="submitBtn" class="btn btn-primary hidden-xs">Submit</button>
-		  <button type="button" id="submitBtn" class="btn btn-primary col-xs-12 visible-xs">Submit</button>
-		</div><!-- end responsive submit button column -->
-	      </div><!-- end SP panel body -->
-	    </div><!-- end SP panel -->
-	  </div><!-- end SP column -->
-	</div><!-- end SP row -->
+	    <!-- Start submit panel -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-12">
+		    <p>Please correct any errors prior to submission.</p>
+		  </div>
+		  <div class="col-xs-12">
+		    <!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
+		    <button type="button" id="submitBtn" class="btn btn-primary hidden-xs">Submit</button>
+		    <button type="button" id="submitBtn" class="btn btn-primary col-xs-12 visible-xs">Submit</button>
+		  </div>
+                </div>
+              </div>
+            </div><!-- end submit panel -->
+	  </div>
+	</div><!-- end submit section of form -->
 	
-      </form><!-- end form -->
+      </form><!-- end total form -->
     </div><!-- end container -->
 
     <footer class="footer">

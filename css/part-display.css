@@ -7,6 +7,14 @@
     padding-left: .15em;
 }
 
+.glyphicon-remove-circle {
+    margin-top: 5px;
+}
+
+.panel-remove-btn {
+    padding-left: 0 !important;
+}
+
 /* Error message styles */
 
 .alert {
@@ -33,24 +41,24 @@
     margin-bottom: 1.35em;
 }
 
-/* Media Queries */
+.sp-input {
+    padding-bottom: 15px;
+}
 
 @media (max-width: 768px) {
     .glyphicon-picture {
 	padding-left: .13em;
 	margin-bottom: .3em;
     }
+    .panel-remove-btn {
+	padding-left: 15px !important;
+	margin-top: 1em;
+    }
     .control-label {
 	padding-top: 7px !important;
     }
     .height {
 	margin-bottom: 15px !important;
-    }
-    /*.ms-input {
-	margin-left: 3px;
-    }*/
-    .panel-del-btn {
-	margin-top: 1em;
     }
     .btn {
 	padding-top: .75em !important;
