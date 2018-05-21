@@ -43,16 +43,13 @@ body {
     background-color: #f5be41;
 }
 
-.tab-ud {
-    background-color: #258039;
-}
-
 .tab-dd {
     background-color: #cf3721;
 }
 
-.tab-sp {
-    background-color: #31a9b8;
+.submit-btn {
+    padding-top: .75em !important;
+    padding-bottom: .75em !important;
 }
 
 /* Footer Nav Styles */

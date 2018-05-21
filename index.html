@@ -443,24 +443,13 @@
 	<!-- Begin submit section of form -->
 	<div class="row">
 	  <div class="col-xs-12">
-	    <div class="tab tab-sp">Submit Parts</div>
-	    <!-- Start submit panel -->
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-12">
-		    <p>Please correct any errors prior to submission.</p>
-		  </div>
-		  <div class="col-xs-12">
-		    <!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
-		    <button type="button" id="submitBtn" class="btn btn-primary hidden-xs">Submit</button>
-		    <button type="button" id="submitBtn" class="btn btn-primary col-xs-12 visible-xs">Submit</button>
-		  </div>
-                </div>
-              </div>
-            </div><!-- end submit panel -->
-	  </div>
-	</div><!-- end submit section of form -->
+	    <!-- Start submit button -->
+            <!-- toggle this helper paragraph on with JS if errors are present -->
+	    <p class="text-center hidden">Please correct any errors prior to submission.</p>
+	    <!-- add disabled="disabled" to submitBtn to disable submit when part display errors present -->
+	    <button type="button" id="submitBtn" class="btn btn-primary col-xs-12 submit-btn">Submit</button>
+          </div>
+        </div>
 	
       </form><!-- end total form -->
     </div><!-- end container -->
