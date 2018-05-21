@@ -11,10 +11,6 @@
     margin-top: 5px;
 }
 
-.panel-remove-btn {
-    padding-left: 0 !important;
-}
-
 /* Error message styles */
 
 .alert {
@@ -35,6 +31,10 @@
     margin-bottom: .5em;
 }
 
+.panel-remove-btn {
+    padding-left: 0 !important;
+}
+
 /* Collapse/Expand errors section style */
 
 .collapse-err {
@@ -47,21 +47,12 @@
 
 @media (max-width: 768px) {
     .glyphicon-picture {
-	padding-left: .13em;
 	margin-bottom: .3em;
-    }
-    .panel-remove-btn {
-	padding-left: 15px !important;
-	margin-top: 1em;
     }
     .control-label {
 	padding-top: 7px !important;
     }
     .height {
 	margin-bottom: 15px !important;
-    }
-    .btn {
-	padding-top: .75em !important;
-	padding-bottom: .75em !important;
     }
 }
