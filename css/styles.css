@@ -40,9 +40,25 @@ body {
   border-top-right-radius: .25em;
 }
 
+.tab-ms {
+    background-color: #57ccae;
+}
+
+.tab-ud {
+    background-color: #e4ad6f;
+}
+
 .submit-btn {
     padding-top: .75em !important;
     padding-bottom: .75em !important;
+    background-color: #31b873;
+    color: #fff;
+    font-weight: 500;
+}
+
+.submit-btn:hover {
+    background-color: #45cd87;
+    color: #fff;
 }
 
 /* Footer Nav Styles */
