@@ -33,18 +33,11 @@ body {
   font-size: 2em;
   padding-left: .75em;
   color: #fff;
+  background-color: #b88209;
   padding-top: .25em;
   border-bottom: 0;
   border-top-left-radius: .25em;
   border-top-right-radius: .25em;
-}
-
-.tab-ms {
-    background-color: #f5be41;
-}
-
-.tab-dd {
-    background-color: #cf3721;
 }
 
 .submit-btn {
