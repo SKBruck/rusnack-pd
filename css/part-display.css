@@ -35,6 +35,15 @@
     padding-left: 0 !important;
 }
 
+.tooltip.top .tooltip-inner {
+    background-color: #fff;
+    color: #cf3721;
+    border: 1px solid #cf3721;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: #fff;
+}
+
 /* Collapse/Expand errors section style */
 
 .collapse-err {
